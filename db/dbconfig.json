@@ -1,0 +1,19 @@
+{
+  "development": {
+    "use_env_variable": "DEV_DB_URL",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "use_env_variable": "TEST_DB_URL",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "use_env_variable": "PROD_DB_URL",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "seederStorage": "sequelize",
+  "seederStorageTableName": "SequelizeData"
+}
