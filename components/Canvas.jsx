@@ -22,7 +22,7 @@ function Canvas() {
     </div>
   </div>
 </div>
-   
+<div className="score"></div>
       <canvas id="canvas" />
 
       <div className="chat">
