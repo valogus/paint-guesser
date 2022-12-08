@@ -10,6 +10,7 @@ function Toolbar() {
             <button className="toolbar-btn eraser" />
             <button className="toolbar-btn line" />
             <input style={{ marginLeft: 10 }} type="color" className='inputcolor'/>
+            <button className="start"> Начни игру! </button>
             <button className="toolbar-btn undo" />
             <button className="toolbar-btn redo" />
             <button className="toolbar-btn save" />

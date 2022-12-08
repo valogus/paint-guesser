@@ -9,3 +9,13 @@ canvas{
     border: 1px solid black;
     background-color:white;
 }
+.chat{
+    margin-left:20px;
+    display:flex;
+    flex-direction: column;
+    
+}
+.modal{
+    display: flex;
+
+}

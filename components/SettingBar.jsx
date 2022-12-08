@@ -5,6 +5,7 @@ function SettingBar() {
     return (
 
         <div className='setting-bar'>
+             <div className ='word'></div>
         </div>
     );
   }

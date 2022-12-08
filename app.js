@@ -1,6 +1,6 @@
 const express = require('express');
 const ws = require('ws');
-
+// const aWss = ws.getWss(); 
 const app = express();
 require('@babel/register');
 const morgan = require('morgan');
@@ -32,3 +32,23 @@ const httpServer = app.listen(PORT, (err) => {
 const wsServer = new ws.WebSocketServer({
   server: httpServer,
 });
+
+// wsServer.on('connection', (client) => {
+//   client.on('message', (data) => {
+//     console.log('Message from client', data.toString());
+//     const message = data.toString()
+//     client.send(message)
+//   });
+// });
+wsServer.on('connection', (currentClient) => {
+  currentClient.on('message', (data) => {
+    console.log(data)
+    wsServer.clients.forEach((client) =>{
+      const message = data.toString()
+      client.send(message)
+    })
+    console.log('Message from client', data.toString());
+
+  });
+});
+
