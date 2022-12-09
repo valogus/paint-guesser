@@ -7,6 +7,17 @@
     width:100%;
     box-shadow: 0 4px 5px gray;
     z-index:999;
+    animation-iteration-count:1;
+}
+.hidden {
+    height: 40px;
+    background-color:white;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    position: absolute;
+    width:100%;
+    box-shadow: 0 4px 5px gray;
 }
 .setting-bar {
     height: 40px;
@@ -53,3 +64,12 @@
     background: url('../assets/save.png') no-repeat center center;
     margin-right:10px;
 }
+@keyframes myup{
+    from {top: 0px;}
+    to {top: -200px;}
+   
+  }
+  @keyframes mydown {
+    from {top: 0px;}
+    to {top: 200px;}
+  }

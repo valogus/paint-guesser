@@ -6,30 +6,33 @@ const canvasState = require('../public/js/canvasState');
 function Canvas() {
   return (
     <div className="canvas">
-      <div class="modal" tabindex="-1">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Введите ваше имя</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div className="modal" tabIndex="-1">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title">Введите ваше имя</h5>
+              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+            </div>
+            <div className="modal-body">
+              <input className="username" type="name" />
+            </div>
+            <div className="modal-footer">
+              <button type="button" className="btn btn-primary">Введи свое имя</button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="modal-body">
-        <input class='username'type='name'></input>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" >Введи свое имя</button>
-      </div>
-    </div>
-  </div>
-</div>
-<div className="score"></div>
+      <div className="score" />
       <canvas id="canvas" />
 
-      <div className="chat">
-        <input name="message" type="text" className="input" />
+      <div className="chat mb-3 form-control">
+        <form id="myform" className="formChat" type="submit">
+          <input name="message" type="text" className="input" />
+        </form>
         <br />
-        <button name="sendButton" className="buttonmsg" type="click" disabled> Введите сообщение</button>
-        <ul data-message=''></ul>
+        <button form="myform" name="sendButton" className="buttonmsg" type="submit" disabled> Введите сообщение</button>
+
+        <ul className="list-group " data-message="" />
       </div>
     </div>
 

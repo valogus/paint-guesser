@@ -13,9 +13,23 @@ canvas{
     margin-left:20px;
     display:flex;
     flex-direction: column;
-    
+    max-width:300px;
+    word-wrap: break-word;
+}
+.chat li{
+    display:flex;
+    max-width:300px;
+    max-height:500px;
+    word-wrap: break-word;
+   
 }
 .modal{
     display: flex;
 
+}
+.list-group{
+    overflow:scroll; width: 280px; height:330px; 
+}
+.formChat input{
+    width: 280px;
 }
