@@ -36,7 +36,7 @@ const brushdown = (e) => {
     const inputcolor = document.querySelector('.inputcolor').value;
     ctx.strokeStyle = inputcolor;
     ctx.fillStyle = inputcolor;
-    ctx.lineWidth = 10 * 2;
+    ctx.lineWidth = 4 * 2;
     isMouseDown = true;
 };
 const brushmove = (e) => {
@@ -46,7 +46,7 @@ const brushmove = (e) => {
         ctx.stroke();
         ctx.beginPath();
         // console.log(e.clientX, e.clientY)
-        ctx.arc(e.offsetX, e.offsetY, 10, 0, Math.PI * 2);
+        ctx.arc(e.offsetX, e.offsetY, 4, 0, Math.PI * 2);
         ctx.fill();
 
         ctx.beginPath();
@@ -133,7 +133,7 @@ rect.addEventListener('click', (e) => {
 let sendingImg;
 window.addEventListener('click', (event) => {
     console.log('----->', event.target.className);
-    if (event.target.className !== 'start') {sendingImg = canv.toDataURL();
+    if (event.target.className !== 'start btn btn-warning') {sendingImg = canv.toDataURL();
     //   console.log('sendingImg', sendingImg);
     ws.send(sendingImg);}
     // const data ={

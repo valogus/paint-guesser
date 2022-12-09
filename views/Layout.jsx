@@ -16,7 +16,7 @@ function Layout({ title, children }) {
           <link rel="stylesheet" href="/css/canvas.css" />
           <script defer src="/js/canvas.js" />
           <script defer src="/js/client.js" />
-          <title>{title || 'ReactSSR'}</title>
+          <title>{title || 'GuessDraw'}</title>
 
           {/* <link rel="stylesheet" href="https://unpkg.com/purecss@2.1.0/build/pure-min.css" integrity="sha384-yHIFVG6ClnONEA5yB5DJXfW2/KC173DIQrYoZMEtBvGzmf0PKiGyNEqe9N6BNDBH" crossOrigin="anonymous"></link>
         <link rel="stylesheet" href="/css/style.css"/>

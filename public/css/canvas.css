@@ -16,6 +16,22 @@ canvas{
     max-width:300px;
     word-wrap: break-word;
 }
+.scoreName{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.scoreForm{
+    display:flex;
+    flex-direction: column;
+    max-width:200px;
+    height:330px;
+    margin-right: 20px;
+}
+.score div{
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
 .chat li{
     display:flex;
     max-width:300px;
@@ -28,7 +44,7 @@ canvas{
 
 }
 .list-group{
-    overflow:scroll; width: 280px; height:330px; 
+    overflow:auto; width: 280px; height:330px; 
 }
 .formChat input{
     width: 280px;

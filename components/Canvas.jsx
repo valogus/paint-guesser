@@ -22,7 +22,8 @@ function Canvas() {
           </div>
         </div>
       </div>
-      <div className="score" />
+
+      <div className="scoreForm mb-3 form-control"><p className="scoreName">Счет</p><div className="score" /></div>
       <canvas id="canvas" />
 
       <div className="chat mb-3 form-control">
@@ -30,7 +31,7 @@ function Canvas() {
           <input name="message" type="text" className="input" />
         </form>
         <br />
-        <button form="myform" name="sendButton" className="buttonmsg" type="submit" disabled> Введите сообщение</button>
+        <button form="myform" name="sendButton" className="buttonmsg btn btn-primary" type="submit" disabled> Введите сообщение</button>
 
         <ul className="list-group " data-message="" />
       </div>

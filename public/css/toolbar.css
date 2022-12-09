@@ -3,11 +3,16 @@
     background-color:white;
     display: flex;
     align-items: center;
+    justify-content:space-between;
     position: absolute;
     width:100%;
     box-shadow: 0 4px 5px gray;
     z-index:999;
     animation-iteration-count:1;
+}
+.start{
+    display:flex;
+    margin-left:auto;
 }
 .hidden {
     height: 40px;
