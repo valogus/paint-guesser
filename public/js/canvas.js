@@ -4,7 +4,7 @@ const ctx = canv.getContext('2d');
 const brush = document.querySelector('.brush');
 const eraser = document.querySelector('.eraser');
 const rect = document.querySelector('.rect');
-
+const circle = document.querySelector('.circle')
 const x = 50;
 const width = 600;
 const height = 400;
@@ -128,6 +128,45 @@ rect.addEventListener('click', (e) => {
 
     canv.addEventListener('mousemove', squaremove);
 });
+// круг
+function circlemove(e) {
+    // console.log('this.startX', this.startX, this.statY);
+    if (isMouseDown) {
+        const inputcolor = document.querySelector('.inputcolor').value;
+        ctx.strokeStyle = inputcolor;
+        ctx.fillStyle = inputcolor;
+        const img = new Image();
+        img.src = this.saved;
+        img.onload =  async function () {
+                let r = Math.sqrt((e.offsetX - this.startX)**2 + (e.offsetY - this.startY)**2)
+                ctx.clearRect(0, 0, 600, 400);
+                ctx.drawImage(img, 0, 0, 600, 400)
+                ctx.beginPath()
+                ctx.arc(this.startX, this.startY, r, 0, 2*Math.PI)
+                ctx.fill()
+                ctx.stroke()
+            }.bind(this)
+        };
+    }
+function circledown(e) {
+    isMouseDown = true;
+
+    // ctx.moveTo(e.offsetX, e.offsetY);
+    this.startX = e.offsetX;
+    this.startY = e.offsetY;
+    //   console.log(canv.toDataURL());
+    this.saved = canv.toDataURL();
+    //   console.log('this.saved', this.saved);
+}
+circle.addEventListener('click', (e) => {
+    canv.addEventListener('mousedown', circledown);
+    canv.addEventListener('mouseup', (event) => {
+        isMouseDown = false;
+        ctx.beginPath();
+    });
+
+    canv.addEventListener('mousemove', circlemove);
+});
 
 // удаляем листнеры, а то чего им висеть
 let sendingImg;
@@ -152,6 +191,10 @@ window.addEventListener('click', (event) => {
     if (event.target.className.includes('toolbar-btn') && !event.target.className.includes('brush')) {
         canv.removeEventListener('mousemove', brushmove, false);
         canv.removeEventListener('mousedown', brushdown, false);
+    }
+    if (event.target.className.includes('toolbar-btn') && !event.target.className.includes('circle')) {
+        canv.removeEventListener('mousemove', circlemove, false);
+        canv.removeEventListener('mousedown', circledown, false);
     }
 });
 
