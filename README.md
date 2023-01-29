@@ -28,7 +28,7 @@ Clone the project
 Go to the server directory
 
 ```bash
-  cd server
+  cd paint-guesser
 ```
 Install dependencies
 
