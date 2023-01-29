@@ -25,7 +25,11 @@ Clone the project
 ```bash
   git clone https://github.com/valogus/paint-guesser.git
 ```
+Go to the server directory
 
+```bash
+  cd server
+```
 Install dependencies
 
 ```bash
